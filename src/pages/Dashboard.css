@@ -1,0 +1,51 @@
+.dashboard-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.dashboard-header h2 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.scenarios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.scenario-preview-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.scenario-preview-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+    margin-bottom: var(--spacing-md);
+}
+
+.card-title {
+    margin-top: var(--spacing-sm);
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+}
+
+.card-body {
+    flex: 1;
+    margin-bottom: var(--spacing-lg);
+}
+
+.scenario-desc {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-base);
+}
+
+.w-full {
+    width: 100%;
+}

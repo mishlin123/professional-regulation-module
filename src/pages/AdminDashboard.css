@@ -1,0 +1,46 @@
+.admin-dashboard {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.analytics-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.analytics-table th,
+.analytics-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.analytics-table th {
+    background-color: #f8fafc;
+    color: var(--color-text-muted);
+    font-weight: 600;
+}
+
+.tag {
+    padding: 0.25rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.tag.success {
+    background-color: #DEF7EC;
+    color: #03543F;
+}
+
+.tag.pending {
+    background-color: #FEF3C7;
+    color: #92400E;
+}
