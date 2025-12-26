@@ -43,6 +43,7 @@ function App() {
   }
 
   // Content for authenticated users
+  let content = null;
   if (currentView === 'dashboard') {
     content = <Dashboard onSelectScenario={handleSelectScenario} />;
   } else if (currentView === 'admin') {
