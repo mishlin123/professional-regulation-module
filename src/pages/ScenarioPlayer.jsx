@@ -18,6 +18,10 @@ const ScenarioPlayer = ({ scenarioId, onComplete, onBack }) => {
     const handleSubmit = () => {
         if (selectedOption) {
             setShowFeedback(true);
+            // Saves result to Supabase
+            import('../services/supabaseClient').then(({ saveQuizResult }) => {
+                saveQuizResult('Anonymous', scenarioId, 'main_question', selectedOption.isCorrect);
+            });
         }
     };
 

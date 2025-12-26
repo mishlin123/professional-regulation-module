@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { saveQuizResult } from '../services/supabaseClient';
 import './CoursePlayer.css';
 
 const CoursePlayer = ({ courseData, onComplete, onExit, user }) => {
@@ -41,8 +42,7 @@ const CoursePlayer = ({ courseData, onComplete, onExit, user }) => {
     const handleSubmitAnswer = () => {
         if (selectedOption) {
             setShowFeedback(true);
-            // In a real app, send data to Supabase here
-            console.log(`User ${user?.name} answered ${currentSlide.id}: ${selectedOption.id} (${selectedOption.isCorrect})`);
+            saveQuizResult(user?.name || 'Anonymous', 'full_course', currentSlide.id, selectedOption.isCorrect);
         }
     };
 
