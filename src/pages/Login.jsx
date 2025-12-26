@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { supabase } from '../services/supabaseClient';
+import './Login.css';
 
 const Login = ({ onLogin }) => {
     const [name, setName] = useState('');
