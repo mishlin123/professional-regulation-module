@@ -2,7 +2,7 @@ export const fullCourse = [
     {
         "id": 1,
         "type": "slide",
-        "title": "Professional Boundaries: The Dos, the Don’ts and the In-Betweens",
+        "title": "Professional Boundaries: The Dos, the Don'ts and the In-Betweens",
         "content": "### Professional Insight\n\n**Welcome to your professional development module.**\n\nThis course is designed to guide you through the complexities of professional regulation, the Code of Professional Responsibility, and the practical application of boundaries in the teaching profession.",
         "explanation": "Kia ora and welcome. We will cover the Code of Professional Responsibility, standard boundaries, and practical scenarios to protect both you and your students. This is a self-paced module, so take your time to reflect on each section.",
         "media": {
@@ -22,7 +22,7 @@ export const fullCourse = [
         "id": 3,
         "type": "slide",
         "title": "What is a Profession?",
-        "content": "## Key Characteristics\n\n*   **Specialised Body of Knowledge**: Expertise not held by the general public.\n*   **On-going Learning**: commitment to Professional Development.\n*   **Tertiary Qualification**: Degree or diploma requirements.\n*   **Code of Ethics**: The values we uphold.\n*   **Code of Conduct**: The behaviour we demonstrate.\n*   **Mandatory Registration**: Formal oversight.",
+        "content": "## Key Characteristics\n\n*   **Specialised Body of Knowledge**: Expertise not held by the general public.\n*   **On-going Learning**: Commitment to Professional Development.\n*   **Tertiary Qualification**: Degree or diploma requirements.\n*   **Code of Ethics**: The values we uphold.\n*   **Code of Conduct**: The behaviour we demonstrate.\n*   **Mandatory Registration**: Formal oversight.",
         "explanation": "What distinguishes a 'job' from a 'profession'? It is the combination of specialized knowledge, ethical codes, and public trust. Because you hold this status, you are held to a higher standard of conduct than the general public.",
         "media": {
             "type": "icon",
@@ -71,7 +71,7 @@ export const fullCourse = [
         "id": 14,
         "type": "scenario",
         "title": "Scenario: Netball Ride Home",
-        "content": "You coach a Year 9 netball team. It’s 6pm after a game at a neighbouring school. You see that one of your players has not been picked up and she has left her cell phone back at school.\n\n**The student asks for a lift home.**",
+        "content": "You coach a Year 9 netball team. It's 6pm after a game at a neighbouring school. You see that one of your players has not been picked up and she has left her cell phone back at school.\n\n**The student asks for a lift home.**",
         "question": "What is the most appropriate professional action?",
         "options": [
             {
@@ -94,7 +94,7 @@ export const fullCourse = [
         "id": 15,
         "type": "scenario",
         "title": "Scenario: Distressed Student",
-        "content": "You receive an email at 9pm from a Year 10 student: \n\n> 'My life at home is crap and I am really unhappy and scared and I don’t know what to do, I have taken Mums car.'",
+        "content": "You receive an email at 9pm from a Year 10 student: \n\n> 'My life at home is crap and I am really unhappy and scared and I don't know what to do, I have taken Mum's car.'",
         "question": "How do you respond?",
         "options": [
             {
