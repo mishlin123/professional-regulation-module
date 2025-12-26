@@ -120,7 +120,7 @@ const CoursePlayer = ({ courseData, onComplete, onExit, user }) => {
                             <div className="slide-footer">
                                 <button className="btn btn-outline" disabled={currentSlideIndex === 0} onClick={handlePrev}>&larr; Back</button>
                                 <div className="spacer"></div>
-                                <button className="btn btn-primary" onClick={handleNext}>{currentSlideIndex === courseData.length - 1 ? 'Finish Course' : 'Next &rarr;'}</button>
+                                <button className="btn btn-primary" onClick={handleNext}>{currentSlideIndex === courseData.length - 1 ? 'Finish Course' : 'Next'}</button>
                             </div>
                         )}
                     </div>
