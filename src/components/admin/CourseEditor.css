@@ -1,0 +1,194 @@
+/* Course Editor Layout */
+.course-editor-container {
+    display: flex;
+    height: 70vh;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: white;
+    overflow: hidden;
+}
+
+/* Sidebar List */
+.editor-sidebar {
+    width: 300px;
+    border-right: 1px solid var(--color-border);
+    background: #f8fafc;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-toolbar {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    gap: 0.5rem;
+}
+
+.slide-list {
+    flex: 1;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.slide-item {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s;
+}
+
+.slide-item:hover {
+    background: #e2e8f0;
+}
+
+.slide-item.active {
+    background: white;
+    border-left: 4px solid var(--color-primary);
+}
+
+.slide-item-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    overflow: hidden;
+}
+
+.slide-item-title {
+    font-weight: 500;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.slide-item-type {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+}
+
+.slide-actions {
+    display: flex;
+    gap: 0.25rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.slide-item:hover .slide-actions {
+    opacity: 1;
+}
+
+.mini-btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+    background: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.mini-btn:hover {
+    background: #f1f5f9;
+}
+
+.mini-btn.danger {
+    color: #ef4444;
+    border-color: #fecaca;
+}
+
+.mini-btn.danger:hover {
+    background: #fef2f2;
+}
+
+
+/* Main Form Area */
+.editor-main {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.editor-form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--color-text);
+}
+
+.form-control {
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.help-text {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
+
+.section-divider {
+    height: 1px;
+    background: var(--color-border);
+    margin: 2rem 0;
+}
+
+.sub-heading {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+}
+
+/* Options Editor (for Scenarios) */
+.options-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.option-editor-item {
+    border: 1px solid var(--color-border);
+    padding: 1rem;
+    border-radius: 8px;
+    background: #f8fafc;
+}
+
+.option-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+}

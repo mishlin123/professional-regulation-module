@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchAnalytics, fetchCourse, saveCourse } from '../services/supabaseClient';
 import { fullCourse as defaultCourse } from '../data/fullCourse';
+import CourseEditor from '../components/admin/CourseEditor';
 import './AdminDashboard.css';
 
 const AdminDashboard = ({ onBack }) => {
@@ -103,7 +104,7 @@ const AdminDashboard = ({ onBack }) => {
             ) : (
                 <div className="card editor-card">
                     <div className="editor-header">
-                        <h3>JSON Course Editor</h3>
+                        <h3>Visual Course Builder</h3>
                         <div className="editor-actions">
                             <span className={`status-msg ${statusMsg.includes('Error') || statusMsg.includes('Invalid') ? 'error' : 'success'}`}>{statusMsg}</span>
                             <button
@@ -115,13 +116,13 @@ const AdminDashboard = ({ onBack }) => {
                             </button>
                         </div>
                     </div>
-                    <p className="editor-hint">Edit the JSON below to update the course content immediately.</p>
-                    <textarea
-                        className="json-editor"
-                        value={editorContent}
-                        onChange={(e) => setEditorContent(e.target.value)}
-                        spellCheck="false"
-                    />
+                    {/* Visual Editor Component */}
+                    <div className="visual-editor-wrapper" style={{ height: '100%' }}>
+                        <CourseEditor
+                            initialContent={editorContent}
+                            onChange={(newContent) => setEditorContent(newContent)}
+                        />
+                    </div>
                 </div>
             )}
         </div>
