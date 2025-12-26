@@ -1,55 +1,16 @@
 
 // Add to dependencies
 import React, { useState, useEffect } from 'react';
-import { fetchAnalytics, fetchCourse, saveCourse } from '../services/supabaseClient';
-import { fullCourse as defaultCourse } from '../data/fullCourse';
-import CourseEditor from '../components/admin/CourseEditor';
+import { fetchAnalytics } from '../services/supabaseClient';
 import './AdminDashboard.css';
 
 const AdminDashboard = ({ onBack }) => {
-    const [activeTab, setActiveTab] = useState('analytics'); // 'analytics' or 'editor'
     const [analyticsData, setAnalyticsData] = useState([]);
-    const [editorContent, setEditorContent] = useState('');
-    const [saving, setSaving] = useState(false);
-    const [statusMsg, setStatusMsg] = useState('');
 
     useEffect(() => {
-        // Load data based on tab
-        if (activeTab === 'analytics') {
-            fetchAnalytics().then(setAnalyticsData);
-        } else if (activeTab === 'editor') {
-            loadCourseContent();
-        }
-    }, [activeTab]);
-
-    const loadCourseContent = async () => {
-        setStatusMsg('Loading...');
-        const data = await fetchCourse('full_course');
-        if (data) {
-            setEditorContent(JSON.stringify(data, null, 4));
-        } else {
-            // Fallback to local default if nothing in DB
-            setEditorContent(JSON.stringify(defaultCourse, null, 4));
-        }
-        setStatusMsg('');
-    };
-
-    const handleSaveCourse = async () => {
-        try {
-            setSaving(true);
-            const parsed = JSON.parse(editorContent);
-            const success = await saveCourse('full_course', parsed);
-            if (success) {
-                setStatusMsg('Course saved successfully! Changes are live.');
-            } else {
-                setStatusMsg('Error saving course to Supabase.');
-            }
-        } catch (err) {
-            setStatusMsg('Invalid JSON. Please check your syntax.');
-        } finally {
-            setSaving(false);
-        }
-    };
+        // Load data
+        fetchAnalytics().then(setAnalyticsData);
+    }, []);
 
     return (
         <div className="admin-dashboard fade-in">
@@ -58,73 +19,42 @@ const AdminDashboard = ({ onBack }) => {
                 <button className="btn btn-outline" onClick={onBack}>Back to App</button>
             </div>
 
-            <div className="admin-tabs">
-                <button
-                    className={`tab-btn ${activeTab === 'analytics' ? 'active' : ''}`}
-                    onClick={() => setActiveTab('analytics')}
-                >
-                    Analytics
-                </button>
-                <button
-                    className={`tab-btn ${activeTab === 'editor' ? 'active' : ''}`}
-                    onClick={() => setActiveTab('editor')}
-                >
-                    Course Editor
-                </button>
+            <div className="card">
+                <h3>Learner Progress</h3>
+                <table className="analytics-table">
+                    <thead>
+                        <tr>
+                            <th>Teacher Name</th>
+                            <th>Status</th>
+                            <th>Quiz Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {analyticsData.length > 0 ? (
+                            analyticsData.map((row, idx) => (
+                                <tr key={idx}>
+                                    <td>{row.name}</td>
+                                    <td>{row.completed ? <span className="tag success">Completed</span> : <span className="tag pending">In Progress</span>}</td>
+                                    <td>{row.score}</td>
+                                </tr>
+                            ))
+                        ) : (
+                            <tr>
+                                <td colSpan="3" style={{ textAlign: 'center', color: '#999' }}>No data available yet.</td>
+                            </tr>
+                        )}
+                    </tbody>
+                </table>
             </div>
 
-            {activeTab === 'analytics' ? (
-                <div className="card">
-                    <h3>Learner Progress</h3>
-                    <table className="analytics-table">
-                        <thead>
-                            <tr>
-                                <th>Teacher Name</th>
-                                <th>Status</th>
-                                <th>Quiz Score</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {analyticsData.length > 0 ? (
-                                analyticsData.map((row, idx) => (
-                                    <tr key={idx}>
-                                        <td>{row.name}</td>
-                                        <td>{row.completed ? <span className="tag success">Completed</span> : <span className="tag pending">In Progress</span>}</td>
-                                        <td>{row.score}</td>
-                                    </tr>
-                                ))
-                            ) : (
-                                <tr>
-                                    <td colSpan="3" style={{ textAlign: 'center', color: '#999' }}>No data available yet.</td>
-                                </tr>
-                            )}
-                        </tbody>
-                    </table>
+            <div className="card" style={{ marginTop: '2rem', background: '#f8fafc', border: '1px dashed #cbd5e1' }}>
+                <div style={{ padding: '2rem', textAlign: 'center' }}>
+                    <h3 style={{ marginBottom: '1rem' }}>Manage Course Content</h3>
+                    <p>Course content is now managed via <strong>Sanity Studio</strong>.</p>
+                    <p style={{ marginBottom: '1.5rem', color: '#64748b' }}>Run the studio locally to make edits.</p>
+                    <code style={{ background: '#e2e8f0', padding: '0.5rem', borderRadius: '4px' }}>npm run start --prefix studio</code>
                 </div>
-            ) : (
-                <div className="card editor-card">
-                    <div className="editor-header">
-                        <h3>Visual Course Builder</h3>
-                        <div className="editor-actions">
-                            <span className={`status-msg ${statusMsg.includes('Error') || statusMsg.includes('Invalid') ? 'error' : 'success'}`}>{statusMsg}</span>
-                            <button
-                                className="btn btn-primary"
-                                onClick={handleSaveCourse}
-                                disabled={saving}
-                            >
-                                {saving ? 'Saving...' : 'Save Changes to Live'}
-                            </button>
-                        </div>
-                    </div>
-                    {/* Visual Editor Component */}
-                    <div className="visual-editor-wrapper" style={{ height: '100%' }}>
-                        <CourseEditor
-                            initialContent={editorContent}
-                            onChange={(newContent) => setEditorContent(newContent)}
-                        />
-                    </div>
-                </div>
-            )}
+            </div>
         </div>
     );
 };

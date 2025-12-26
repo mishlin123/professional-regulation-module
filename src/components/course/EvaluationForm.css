@@ -1,0 +1,92 @@
+.evaluation-form-container {
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.evaluation-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.evaluation-question {
+    margin-bottom: 2rem;
+}
+
+.evaluation-question label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #1f2937;
+}
+
+.star-rating {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.star-button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #D1D5DB;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.star-button:hover,
+.star-button.active {
+    color: #F59E0B;
+    transform: scale(1.1);
+}
+
+.evaluation-question textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #E5E7EB;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: 0.9375rem;
+    resize: vertical;
+    transition: border-color 0.2s ease;
+}
+
+.evaluation-question textarea:focus {
+    outline: none;
+    border-color: #4F46E5;
+}
+
+.evaluation-submitted {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+.success-icon {
+    width: 64px;
+    height: 64px;
+    background: #10B981;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 1rem;
+}
+
+.evaluation-submitted h3 {
+    margin: 0 0 0.5rem;
+    color: #1f2937;
+}
+
+.evaluation-submitted p {
+    margin: 0;
+    color: #6b7280;
+}

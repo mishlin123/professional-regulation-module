@@ -1,0 +1,57 @@
+.case-study-card {
+    background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%);
+    border: 2px solid #3B82F6;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.case-study-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.case-study-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.case-study-title-group {
+    flex: 1;
+}
+
+.case-study-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #1E40AF;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.case-name {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1E3A8A;
+}
+
+.case-study-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9375rem;
+    color: #1E40AF;
+}
+
+.case-study-meta>div {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.case-study-meta strong {
+    font-weight: 600;
+}

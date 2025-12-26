@@ -303,6 +303,46 @@
     border-top: 1px solid #f1f5f9;
 }
 
+/* New Slide Types */
+.slide-subheading {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #64748b;
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.break-notice {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+    border-radius: 1rem;
+    margin: 2rem 0;
+}
+
+.break-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.break-text {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #92400E;
+    margin: 0;
+}
+
+/* Single Column Layout (for evaluation/certificate) */
+.course-layout.single-column {
+    display: block;
+}
+
+.course-layout.single-column .course-main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .course-layout {

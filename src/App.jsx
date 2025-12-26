@@ -7,7 +7,7 @@ import ScenarioPlayer from './pages/ScenarioPlayer';
 import CoursePlayer from './pages/CoursePlayer';
 import AdminDashboard from './pages/AdminDashboard';
 import { fullCourse as localFullCourse } from './data/fullCourse';
-import { fetchCourse } from './services/supabaseClient';
+import { fetchCourseContent } from './services/sanityClient';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -18,15 +18,21 @@ function App() {
 
   // Load course data on mount
   useEffect(() => {
+    // Sanity fetching disabled to prioritize the new PI course content
+    /*
     const loadCourse = async () => {
       setLoadingCourse(true);
-      const data = await fetchCourse('full_course');
-      if (data) {
+      const data = await fetchCourseContent();
+      if (data && data.length > 0) {
         setCourseData(data);
+      } else {
+        console.log("No Sanity data found, falling back to local.");
       }
       setLoadingCourse(false);
     };
     loadCourse();
+    */
+    console.log("Using local PI course content.");
   }, []);
 
   const handleLogin = (userData) => {

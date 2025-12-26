@@ -1,0 +1,37 @@
+.discussion-prompt {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+    border-left: 4px solid #F59E0B;
+    border-radius: 0.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+}
+
+.discussion-icon {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+}
+
+.discussion-content {
+    flex: 1;
+}
+
+.discussion-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #92400E;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.discussion-question {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #78350F;
+    font-style: italic;
+}

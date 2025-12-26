@@ -1,0 +1,153 @@
+.certificate-container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.certificate {
+    background: white;
+    padding: 3rem;
+    max-width: 800px;
+    width: 100%;
+}
+
+.certificate-border {
+    border: 8px double #4F46E5;
+    padding: 2.5rem;
+    position: relative;
+}
+
+.certificate-border::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border: 2px solid #E0E7FF;
+    pointer-events: none;
+}
+
+.certificate-content {
+    text-align: center;
+    position: relative;
+}
+
+.certificate-header h1 {
+    font-size: 2.5rem;
+    color: #4F46E5;
+    margin: 0 0 0.5rem;
+    font-family: 'Georgia', serif;
+}
+
+.certificate-subtitle {
+    font-size: 1.125rem;
+    color: #6366F1;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.certificate-body {
+    margin: 3rem 0;
+}
+
+.certificate-awarded-to {
+    font-size: 1rem;
+    color: #6b7280;
+    margin: 0 0 0.5rem;
+    font-style: italic;
+}
+
+.certificate-name {
+    font-size: 2.25rem;
+    color: #1f2937;
+    margin: 1rem 0;
+    font-family: 'Georgia', serif;
+    border-bottom: 2px solid #4F46E5;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.certificate-has-completed {
+    font-size: 1rem;
+    color: #6b7280;
+    margin: 2rem 0 1rem;
+}
+
+.certificate-course-title {
+    font-size: 1.75rem;
+    color: #4F46E5;
+    margin: 0.25rem 0;
+    font-weight: 700;
+}
+
+.certificate-subtitle-text {
+    font-size: 1.125rem;
+    color: #6366F1;
+    margin: 0.5rem 0 0;
+    font-style: italic;
+}
+
+.certificate-footer {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.certificate-date {
+    font-size: 0.9375rem;
+    color: #6b7280;
+}
+
+.certificate-presenters {
+    display: flex;
+    justify-content: space-around;
+    gap: 3rem;
+}
+
+.presenter-signature {
+    text-align: center;
+}
+
+.signature-line {
+    font-size: 1.25rem;
+    font-family: 'Brush Script MT', cursive;
+    color: #1f2937;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #1f2937;
+    min-width: 200px;
+}
+
+.signature-title {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.certificate-org {
+    font-size: 1.125rem;
+    color: #4F46E5;
+}
+
+.certificate-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    .certificate-container {
+        padding: 0;
+    }
+
+    .certificate {
+        max-width: none;
+        page-break-inside: avoid;
+    }
+}

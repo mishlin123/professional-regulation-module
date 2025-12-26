@@ -12,7 +12,7 @@ const Layout = ({ children, user }) => {
             </main>
             <footer className="footer">
                 <div className="container text-center text-muted text-sm">
-                    &copy; {new Date().getFullYear()} Professional Regulation Training. All rights reserved.
+                    &copy; {new Date().getFullYear()} Professional Boundaries for Teachers. All rights reserved.
                 </div>
             </footer>
         </div>
