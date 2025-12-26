@@ -3,8 +3,8 @@ export const fullCourse = [
         "id": 1,
         "type": "slide",
         "title": "Professional Boundaries: The Dos, the Don’ts and the In-Betweens",
-        "content": "### Professional Insight - 7 November 2025\n\n[www.professionalinsight.co.nz](http://www.professionalinsight.co.nz/)",
-        "explanation": "Kia ora and welcome. This course is designed to guide you through the complexities of professional regulation. We will cover the Code of Professional Responsibility, standard boundaries, and practical scenarios to protect both you and your students.",
+        "content": "### Professional Insight\n\n**Welcome to your professional development module.**\n\nThis course is designed to guide you through the complexities of professional regulation, the Code of Professional Responsibility, and the practical application of boundaries in the teaching profession.",
+        "explanation": "Kia ora and welcome. We will cover the Code of Professional Responsibility, standard boundaries, and practical scenarios to protect both you and your students. This is a self-paced module, so take your time to reflect on each section.",
         "media": {
             "type": "image",
             "placeholder": "Professional Insight Logo & Branding"
@@ -13,16 +13,16 @@ export const fullCourse = [
     {
         "id": 2,
         "type": "slide",
-        "title": "Introductions",
-        "content": "## Outline of Today’s Course\n\n*   **Concerns**: Please raise any specific questions with us afterwards.\n*   **High-Level Overview**: Understanding the framework.\n*   **Boundary Breaches**: Discussion and definition.\n*   **Impact**: The consequences of breaches.\n*   **Scenarios**: Practical tips and examples.",
-        "explanation": "This module is not designed to be therapeutic, but educational. We will start at a high level—what creates a profession—and then drill down into specific, difficult situations you might face in the classroom.",
+        "title": "Course Overview",
+        "content": "## What We Will Cover\n\n*   **High-Level Overview**: Understanding the regulatory framework.\n*   **Boundary Breaches**: Definitions and examples.\n*   **Impact**: The consequences of losing professional distance.\n*   **Scenarios**: Interactive decision-making to test your judgement.\n\n> **Note:** This module serves as a guide. Always consult your senior leadership team for specific advice.",
+        "explanation": "This module is educational, not therapeutic. We start with the high-level concepts of what constitutes a 'profession' and then drill down into specific, difficult situations you might face. Reflect on how these concepts apply to your daily interactions.",
         "media": null
     },
     {
         "id": 3,
         "type": "slide",
         "title": "What is a Profession?",
-        "content": "## Key Characteristics\n\n*   **Specialised Body of Knowledge**: Expertise not held by the general public.\n*   **On-going Learning**: Professional Development.\n*   **Tertiary Qualification**: Degree or diploma requirements.\n*   **Code of Ethics**: The values we uphold.\n*   **Code of Conduct**: The behaviour we demonstrate.\n*   **Mandatory Registration**: Formal oversight.",
+        "content": "## Key Characteristics\n\n*   **Specialised Body of Knowledge**: Expertise not held by the general public.\n*   **On-going Learning**: commitment to Professional Development.\n*   **Tertiary Qualification**: Degree or diploma requirements.\n*   **Code of Ethics**: The values we uphold.\n*   **Code of Conduct**: The behaviour we demonstrate.\n*   **Mandatory Registration**: Formal oversight.",
         "explanation": "What distinguishes a 'job' from a 'profession'? It is the combination of specialized knowledge, ethical codes, and public trust. Because you hold this status, you are held to a higher standard of conduct than the general public.",
         "media": {
             "type": "icon",
@@ -52,7 +52,7 @@ export const fullCourse = [
         "id": 8,
         "type": "slide",
         "title": "Professional Boundaries",
-        "content": "### Definition\nParameters that describe the limits of a relationship where one person entrusts their welfare and safety to a professional.\n\nThere is an inherent **Power Imbalance**.",
+        "content": "### Definition\n\nParameters that describe the limits of a relationship where one person entrusts their welfare and safety to a professional.\n\nThere is an inherent **Power Imbalance**.",
         "explanation": "The teacher-student relationship is never equal. You hold authority, influence, and care responsibilities. This power imbalance means the student cannot 'consent' to a boundary breach in the same way two adults might.",
         "media": {
             "type": "image",
@@ -64,7 +64,7 @@ export const fullCourse = [
         "type": "slide",
         "title": "Types of Boundary Breaches",
         "content": "*   **Emotional**: Preferential treatment, favorites.\n*   **Financial**: Gifts, money.\n*   **Communication**: Over-sharing, personal matters.\n*   **Sexual / Relationship**: Intimate relationships, flirtation.\n*   **Grooming**: Criminal behaviour, calculated manipulation.",
-        "explanation": "Breaches aren't just sexual. They can be subtle. Having a 'favourite' student, accepting a loan from a parent, or sharing your own relationship troubles with a student are all breaches of professional boundaries.",
+        "explanation": "Breaches aren't just sexual; they can be subtle. Having a 'favourite' student, accepting a loan from a parent, or sharing your own relationship troubles with a student are all breaches of professional boundaries.",
         "media": null
     },
     {
@@ -87,7 +87,7 @@ export const fullCourse = [
                 "isCorrect": true
             }
         ],
-        "explanation": "This scenario tests the tension between **Safety** and **protection**. You must not put yourself in a situation where you are alone with a student in a private vehicle without authorization. Always involve a third party or Senior Management.",
+        "explanation": "This scenario tests the tension between **Safety** and **Protection**. You must not put yourself in a situation where you are alone with a student in a private vehicle without authorization. Always involve a third party or Senior Management.",
         "media": null
     },
     {
@@ -152,7 +152,7 @@ export const fullCourse = [
             {
                 "id": "movies",
                 "text": "Talking about movies is unprofessional.",
-                "feedback": "Partially true, but not the biggest issue here.",
+                "feedback": "Partially true, but not the biggest issue here. Developing a personal friendship with a student is the core issue.",
                 "isCorrect": false
             },
             {
@@ -162,14 +162,14 @@ export const fullCourse = [
                 "isCorrect": true
             }
         ],
-        "explanation": "This is called the 'Slippery Slope'. It starts with an innocent chat, then moves to 'shared secrets' (complaining about the boss), which creates a false intimacy. This is how grooming relationships often begin.",
+        "explanation": "This is called the 'Slippery Slope'. It starts with an innocent chat, then moves to 'shared secrets' (complaining about the boss), which creates a false intimacy. This is how grooming relationships can begin.",
         "media": null
     },
     {
         "id": 24,
         "type": "slide",
         "title": "Top Tips for Safe Social Media Use",
-        "content": "1.  **Use school approved platforms only.**\n2.  **Add Collleagues**: If using group chat, ADD ANOTHER ADULT.\n3.  **No Friends**: Do not 'Friend' or 'Follow' students.\n4.  **Privacy**: Check settings regularly.\n5.  **Pause**: Slow communication down - think before you post.",
+        "content": "1.  **Use school approved platforms only.**\n2.  **Add Colleagues**: If using group chat, ADD ANOTHER ADULT.\n3.  **No Friends**: Do not 'Friend' or 'Follow' students.\n4.  **Privacy**: Check settings regularly.\n5.  **Pause**: Slow communication down - think before you post.",
         "explanation": "If you wouldn't say it in the classroom, don't say it online. The internet is permanent. Always protect yourself by keeping communications visible and professional.",
         "media": {
             "type": "icon",

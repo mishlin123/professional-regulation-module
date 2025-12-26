@@ -1,6 +1,7 @@
 .admin-dashboard {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 2rem;
 }
 
 .admin-header {
@@ -10,6 +11,37 @@
     margin-bottom: 2rem;
 }
 
+/* Tabs */
+.admin-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--color-border);
+}
+
+.tab-btn {
+    padding: 1rem 1.5rem;
+    background: transparent;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+}
+
+.tab-btn:hover {
+    color: var(--color-primary);
+}
+
+.tab-btn.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+/* Tables */
 .analytics-table {
     width: 100%;
     border-collapse: collapse;
@@ -43,4 +75,62 @@
 .tag.pending {
     background-color: #FEF3C7;
     color: #92400E;
+}
+
+/* Editor */
+.editor-card {
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.editor-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.editor-hint {
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.json-editor {
+    width: 100%;
+    flex: 1;
+    font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: #f8fafc;
+    color: #334155;
+    resize: none;
+    line-height: 1.5;
+}
+
+.json-editor:focus {
+    outline: 2px solid var(--color-primary-light);
+    background: white;
+}
+
+.status-msg {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.status-msg.success {
+    color: var(--color-success);
+}
+
+.status-msg.error {
+    color: var(--color-danger);
 }

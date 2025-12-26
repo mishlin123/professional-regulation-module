@@ -8,8 +8,6 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 // User Management
 export const saveUser = async (name) => {
-    // Ideally we would have a users table, but for this PoC we just pass the name through
-    // or we could log a 'session_start' event if we had an events table.
     return { name };
 }
 
@@ -64,8 +62,44 @@ export const fetchAnalytics = async () => {
         const percentage = Math.round((stats.correct / stats.total) * 100);
         return {
             name: name,
-            completed: stats.total >= 3, // Assuming roughly 3-4 questions implies significant progress for this PoC
+            completed: stats.total >= 3,
             score: `${stats.correct}/${stats.total} (${percentage}%)`
         };
     });
+}
+
+// Course CMS
+export const fetchCourse = async (courseId) => {
+    // Try to fetch from Supabase
+    try {
+        const { data, error } = await supabase
+            .from('courses')
+            .select('data')
+            .eq('id', courseId)
+            .single();
+
+        if (error || !data) {
+            console.warn("Course not found in Supabase, using local fallback.");
+            return null; // Signal to use local data
+        }
+        return data.data; // Assuming 'data' column holds the JSON array
+    } catch (err) {
+        console.error("Error fetching course:", err);
+        return null;
+    }
+}
+
+export const saveCourse = async (courseId, courseContent) => {
+    try {
+        // Upsert course data
+        const { error } = await supabase
+            .from('courses')
+            .upsert({ id: courseId, data: courseContent, updated_at: new Date() });
+
+        if (error) throw error;
+        return true;
+    } catch (err) {
+        console.error("Error saving course:", err);
+        return false;
+    }
 }

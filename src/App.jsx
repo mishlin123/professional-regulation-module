@@ -1,17 +1,33 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import Layout from './components/layout/Layout';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import ScenarioPlayer from './pages/ScenarioPlayer';
 import CoursePlayer from './pages/CoursePlayer';
 import AdminDashboard from './pages/AdminDashboard';
-import { fullCourse } from './data/fullCourse';
-import { scenarios } from './scenarios/data';
+import { fullCourse as localFullCourse } from './data/fullCourse';
+import { fetchCourse } from './services/supabaseClient';
 
 function App() {
   const [user, setUser] = useState(null);
   const [currentView, setCurrentView] = useState('login'); // login, dashboard, scenario, course, admin
   const [activeScenarioId, setActiveScenarioId] = useState(null);
+  const [courseData, setCourseData] = useState(localFullCourse);
+  const [loadingCourse, setLoadingCourse] = useState(false);
+
+  // Load course data on mount
+  useEffect(() => {
+    const loadCourse = async () => {
+      setLoadingCourse(true);
+      const data = await fetchCourse('full_course');
+      if (data) {
+        setCourseData(data);
+      }
+      setLoadingCourse(false);
+    };
+    loadCourse();
+  }, []);
 
   const handleLogin = (userData) => {
     // Backdoor for admin
@@ -49,14 +65,18 @@ function App() {
   } else if (currentView === 'admin') {
     content = <AdminDashboard onBack={() => setCurrentView('dashboard')} />;
   } else if (currentView === 'course') {
-    content = (
-      <CoursePlayer
-        courseData={fullCourse}
-        user={user}
-        onComplete={handleBackToDashboard}
-        onExit={handleBackToDashboard}
-      />
-    );
+    if (loadingCourse) {
+      content = <div className="p-10 text-center">Loading course data...</div>;
+    } else {
+      content = (
+        <CoursePlayer
+          courseData={courseData}
+          user={user}
+          onComplete={handleBackToDashboard}
+          onExit={handleBackToDashboard}
+        />
+      );
+    }
   } else if (currentView === 'scenario') {
     content = (
       <ScenarioPlayer
