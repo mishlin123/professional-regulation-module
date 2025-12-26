@@ -5,7 +5,16 @@ import { createClient } from '@supabase/supabase-js'
 const supabaseUrl = 'YOUR_SUPABASE_URL_HERE'
 const supabaseAnonKey = 'YOUR_SUPABASE_ANON_KEY_HERE'
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+const isMock = supabaseUrl === 'YOUR_SUPABASE_URL_HERE';
+
+export const supabase = isMock
+    ? {
+        from: () => ({
+            select: () => Promise.resolve({ data: [] }),
+            insert: () => Promise.resolve({ data: [] })
+        })
+    }
+    : createClient(supabaseUrl, supabaseAnonKey)
 
 // User Management
 export const saveUser = async (name) => {
