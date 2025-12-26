@@ -1,43 +1,54 @@
+
 import React, { useState } from 'react';
-import './Login.css';
+import { supabase } from '../services/supabaseClient';
 
 const Login = ({ onLogin }) => {
     const [name, setName] = useState('');
+    const [loading, setLoading] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (name.trim()) {
-            onLogin({ name });
+        if (!name.trim()) return;
+
+        setLoading(true);
+        try {
+            const userData = { name: name.trim() };
+            // Optional: Save user to DB if we had a users table
+            onLogin(userData);
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setLoading(false);
         }
     };
 
     return (
-        <div className="login-container fade-in">
-            <div className="card login-card">
-                <div className="login-header text-center">
-                    <div className="login-logo">PR</div>
-                    <h1>Professional Regulation</h1>
-                    <p className="text-muted">Teacher Training Module</p>
+        <div className="login-container">
+            <div className="login-card fade-in">
+                <div className="logo-area">
+                    <h1>Professional Insight</h1>
+                    <p>Digital Training Portal</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="login-form">
+                <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label htmlFor="name">Enter your name to begin</label>
+                        <label htmlFor="name">Enter your Full Name</label>
                         <input
-                            type="text"
                             id="name"
-                            className="form-control"
-                            placeholder="e.g. John Doe"
+                            type="text"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
-                            required
-                            autoFocus
+                            placeholder="e.g. John Doe"
+                            disabled={loading}
                         />
                     </div>
-                    <button type="submit" className="btn btn-primary w-full">
-                        Enter Dashboard
+                    <button type="submit" className="btn btn-primary w-full" disabled={loading}>
+                        {loading ? 'Accessing...' : 'Enter Dashboard'}
                     </button>
                 </form>
+                <div className="login-footer">
+                    <p>Secure Login • 2025 Edition</p>
+                </div>
             </div>
         </div>
     );

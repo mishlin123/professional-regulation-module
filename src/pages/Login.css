@@ -1,57 +1,79 @@
 .login-container {
+    /* Break out of parent layout constraints */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 80vh;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #0f172a 100%);
 }
 
+/* Rest of styles remain similar but ensure card is centered */
 .login-card {
-    width: 100%;
+    background: white;
+    width: 90%;
     max-width: 400px;
-}
-
-.login-header {
-    margin-bottom: var(--spacing-xl);
-}
-
-.login-logo {
-    width: 64px;
-    height: 64px;
-    background-color: var(--color-primary);
-    color: var(--color-white);
+    padding: 3rem;
     border-radius: var(--radius-lg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 0 auto var(--spacing-md);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    text-align: center;
+}
+
+.logo-area h1 {
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.logo-area p {
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .form-group {
-    margin-bottom: var(--spacing-lg);
+    text-align: left;
+    margin-bottom: 1.5rem;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: var(--spacing-sm);
-    font-weight: 500;
-    font-size: var(--font-size-sm);
-    color: var(--color-text-main);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text);
 }
 
-.form-control {
+.form-group input {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    font-family: inherit;
-    font-size: var(--font-size-base);
+    font-size: 1rem;
     transition: border-color 0.2s;
 }
 
-.form-control:focus {
+.form-group input:focus {
     outline: none;
     border-color: var(--color-info);
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.w-full {
+    width: 100%;
+}
+
+.login-footer {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
 }
