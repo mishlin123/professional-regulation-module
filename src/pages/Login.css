@@ -1,27 +1,35 @@
 .login-container {
-    /* Break out of parent layout constraints */
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 9999;
-
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, var(--color-primary) 0%, #0f172a 100%);
+    overflow: hidden;
+    /* Prevent scrolling on login */
 }
 
-/* Rest of styles remain similar but ensure card is centered */
 .login-card {
     background: white;
     width: 90%;
     max-width: 400px;
     padding: 3rem;
     border-radius: var(--radius-lg);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     text-align: center;
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .logo-area h1 {
@@ -57,7 +65,7 @@
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     font-size: 1rem;
-    transition: border-color 0.2s;
+    transition: all 0.2s;
 }
 
 .form-group input:focus {

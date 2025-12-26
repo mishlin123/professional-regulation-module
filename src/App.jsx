@@ -38,10 +38,12 @@ function App() {
     setCurrentView('dashboard');
   };
 
-  let content;
   if (!user) {
-    content = <Login onLogin={handleLogin} />;
-  } else if (currentView === 'dashboard') {
+    return <Login onLogin={handleLogin} />;
+  }
+
+  // Content for authenticated users
+  if (currentView === 'dashboard') {
     content = <Dashboard onSelectScenario={handleSelectScenario} />;
   } else if (currentView === 'admin') {
     content = <AdminDashboard onBack={() => setCurrentView('dashboard')} />;

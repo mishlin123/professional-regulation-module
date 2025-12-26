@@ -74,7 +74,7 @@ const CoursePlayer = ({ courseData, onComplete, onExit, user }) => {
                         {/* Content Layout */}
                         <div className="slide-body-grid">
                             <div className="text-content">
-                                <ReactMarkdown className="markdown-body">{currentSlide.content}</ReactMarkdown>
+                                <ReactMarkdown className="markdown-body">{currentSlide.content || ''}</ReactMarkdown>
                             </div>
 
                             {/* Media Area */}
